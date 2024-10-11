@@ -1,0 +1,132 @@
+body {
+    margin: 0;
+    border: 0;
+    font-family: Arial, sans-serif;
+    
+}
+
+h2{
+    font-family: Segoe UI;
+    font-size: 30px;
+}
+
+nav {
+    background-color: #036dab;
+    padding: 10px 0;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+nav ul li {
+    display: inline-block;
+}
+
+nav ul li input[type="button"] {
+    background-color: transparent;
+    border: 2px solid white;
+    color: white;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+nav ul li:first-child {
+    margin-right: 20px;
+}
+
+nav ul li:last-child {
+    margin-left: 20px;
+}
+
+/* Estilos responsivos */
+@media screen and (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    nav ul li {
+        margin: 10px 0;
+    }
+    
+    nav ul li:first-child,
+    nav ul li:last-child {
+        margin: 10px 0;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    nav ul li img {
+        width: 150px;
+    }
+    
+    .container {
+        max-width: 90%;
+    }
+}
+
+/* Estilos para el gráfico responsivo */
+
+#densityChart {
+    width: 100%;
+    height: auto;
+    max-height: 600px;
+    margin: 0 auto; /* Centrar el gráfico horizontalmente */
+}
+
+#loadData {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color: #036dab;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+#loadData:hover {
+    background-color: #036dab;
+}
+
+.container {
+    width: 100%;
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centrar el contenido verticalmente */
+    justify-content: center; /* Centrar el contenido horizontalmente */
+    text-align: center;
+    box-shadow: 0 4px 8px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+#densityChart {
+    width: 100% !important;
+    height: auto !important;
+    max-height: 600px;
+}
+
+
+
+
+
+
+
