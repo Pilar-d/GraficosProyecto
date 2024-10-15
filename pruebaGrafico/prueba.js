@@ -1,9 +1,6 @@
 
 
-
-
-/* 
-Función para obtener datos desde PHP */
+/* // Función para obtener datos desde PHP
 async function obtenerDatos() {
     try {
         const respuesta = await fetch('getData.php');
@@ -13,7 +10,28 @@ async function obtenerDatos() {
         console.error('Error al obtener los datos:', error);
         throw error;
     }
-} 
+} */
+
+// Datos estándar para mostrar en el gráfico
+async function obtenerDatos() {
+    const datosEstandar = [
+        { nombre: "Pepito Fernandez", porcentaje: 75.5 },
+        { nombre: "Francisco Munoz", porcentaje: 45.2 },
+        { nombre: "Patricio Valenzuela", porcentaje: 90.0 },
+        { nombre: "Federico Ramirez", porcentaje: 20.8 },
+        { nombre: "Angelo Dalas", porcentaje: 60.3 },
+        { nombre: "John Wick", porcentaje: 30.7 },
+        { nombre: "Marcelo Perez", porcentaje: 85.1 },
+        { nombre: "Marcia Perez", porcentaje: 50.1 },
+        
+    ];
+    
+    return new Promise(resolve => {
+        setTimeout(() => resolve(datosEstandar), 500); // Simula una carga de 500ms
+    });
+}
+
+//integrar funcion obtener datos desde PHP
 
 // Función para ajustar automáticamente el espacio entre los valores y las barras
 function ajustarEspacioEntreValoresYBarras(datos, anchoMaximo) {
@@ -76,7 +94,7 @@ function dibujarGrafico(datos) {
     };
 
     // Agregar marcas de escala en el eje X
-    contexto.font = '18px Arial';
+    contexto.font = '20px Segoe UI';
     for (let i = 0; i <= 100; i += 20) {
         const x = 60 + espacioEntreLetraYBarra + (i * escala);
         contexto.beginPath();
@@ -84,7 +102,7 @@ function dibujarGrafico(datos) {
         contexto.lineTo(x, lienzo.height - 65);
         contexto.stroke();
         contexto.fillStyle = '#000000'; // Cambiado a negro
-        contexto.fillText(i + '%', x - 15, lienzo.height - 35);
+        contexto.fillText(i + ' %', x - 15, lienzo.height - 35);
     }
 
     // Dibujar barras con animación y estilo mejorado
@@ -123,13 +141,13 @@ function dibujarGrafico(datos) {
 
                 // Insertar valores de porcentaje estándar en las barras
                 contexto.fillStyle = '#FFFFFF'; // Mantenido en blanco para los números en las barras
-                contexto.font = '16px Arial';
-                contexto.textAlign = 'center';
+                contexto.font = '20px Segoe UI, sans-serif';
+                contexto.textAlign = 'right';
                 contexto.textBaseline = 'middle';
-                const porcentajeTexto = item.porcentaje.toFixed(2) + '%';
+                const porcentajeTexto = item.porcentaje.toFixed(2) + '%'; //porcentaje de la barra con un espcio
                 const anchoTexto = contexto.measureText(porcentajeTexto).width;
                 if (anchoBarra > anchoTexto + 10) {
-                    contexto.fillText(porcentajeTexto, x + anchoBarra / 2, y + alturaBarras / 2);
+                    contexto.fillText(porcentajeTexto, x + anchoBarra - 2, y + alturaBarras / 2);
                 }
 
                 requestAnimationFrame(animarBarra);
@@ -137,7 +155,7 @@ function dibujarGrafico(datos) {
                 // Si el texto no cabe dentro de la barra, dibujarlo fuera
                 if (anchoBarras <= contexto.measureText(item.porcentaje.toFixed(2) + '%').width + 10) {
                     contexto.fillStyle = '#000000'; // Cambiado a negro para los números fuera de las barras
-                    contexto.font = '16px Arial';
+                    contexto.font = '20px Segoe UI';
                     contexto.textAlign = 'left';
                     contexto.textBaseline = 'middle';
                     contexto.fillText(item.porcentaje.toFixed(2) + '%', x + anchoBarras + 5, y + alturaBarras / 2);
@@ -152,7 +170,7 @@ function dibujarGrafico(datos) {
             if (opacidadEtiqueta < 1) {
                 opacidadEtiqueta += 0.05;
                 contexto.fillStyle = `rgba(0, 0, 0, ${opacidadEtiqueta})`; // Cambiado a negro para las letras
-                contexto.font = '20px Arial';
+                contexto.font = '20px Segoe UI';
                 contexto.textAlign = 'left';
                 contexto.textBaseline = 'middle';
                 contexto.fillText(item.nombre, 10, y + alturaBarras / 2);
@@ -190,3 +208,4 @@ document.getElementById('loadData').addEventListener('click', () => {
             console.error('Error al cargar los datos:', error);
         });
 });
+
