@@ -1,8 +1,15 @@
-
 <?php
 include 'db.php';
 
-$sql = "SELECT nombre, COUNT(*) as cantidad FROM usuarios GROUP BY id";
+$sql = "SELECT 
+id,
+nombre,
+cantidad,
+CONCAT(ROUND((cantidad / (SELECT SUM(cantidad) FROM usuarios) * 100), 2), '%') AS porcentaje
+FROM 
+usuarios
+ORDER BY 
+cantidad ASC;";
 $result = $conn->query($sql);
 
 

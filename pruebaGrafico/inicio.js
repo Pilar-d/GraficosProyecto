@@ -1,7 +1,6 @@
 
 
 
-
 /* 
 Función para obtener datos desde PHP */
 async function obtenerDatos() {
