@@ -1,0 +1,148 @@
+body {
+    margin: 0;
+    border: 0;
+    font-family: Arial, sans-serif;
+}
+
+h2 {
+    font-family: 'Segoe UI', sans-serif;
+}
+
+nav {
+    background-color: #33a8de;
+    padding: 10px 0;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+nav ul li {
+    display: inline-block;
+    margin: 5px;
+}
+
+nav ul li input[type="button"] {
+    background-color: transparent;
+    border: 2px solid white;
+    color: white;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+nav ul li input[type="button"]:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+nav ul li:first-child {
+    margin-right: 20px;
+}
+
+nav ul li:last-child {
+    margin-left: 20px;
+}
+
+/* Estilos responsivos */
+@media screen and (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    nav ul li {
+        margin: 10px 0;
+    }
+    
+    nav ul li:first-child,
+    nav ul li:last-child {
+        margin: 10px 0;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    nav ul li img {
+        width: 150px;
+    }
+    
+    .container {
+        max-width: 90%;
+    }
+    
+    h2 {
+        font-size: 20px;
+    }
+}
+
+/* Estilos para el gráfico responsivo */
+#densityChart {
+    width: 100%;
+    height: auto;
+    max-height: 600px;
+    margin: 0 auto;
+}
+
+#loadData {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color: #33a8de;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 20px;
+    transition: background-color 0.3s ease;
+}
+
+#loadData:hover {
+    background-color: #025a8f;
+}
+
+.container {
+    width: 100%;
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    justify-content: center; 
+    text-align: center;
+    box-shadow: 0 4px 8px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+@media screen and (max-width: 1200px) {
+    .container {
+        max-width: 90%;
+        padding: 20px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .container {
+        padding: 10px;
+    }
+    
+    #loadData {
+        font-size: 16px;
+        padding: 8px 16px;
+    }
+}
+
+#densityChart {
+    height: auto !important;
+    max-height: 600px;
+    width: 100%;
+}

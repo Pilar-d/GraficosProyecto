@@ -1,0 +1,157 @@
+
+
+body {
+    margin: 0;
+    border: 0;
+    font-family: Arial, sans-serif;
+}
+
+h2 {
+    font-family: 'Segoe UI', sans-serif;
+    font-size: 30px;
+    color: #036dab;
+    margin-bottom: 20px;
+}
+
+nav {
+    background-color: #33a8de;
+    padding: 10px 0;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+nav ul li {
+    display: inline-block;
+}
+
+nav ul li input[type="button"] {
+    background-color: transparent;
+    border: 2px solid white;
+    color: white;
+    padding: 8px 15px;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+nav ul li input[type="button"]:hover {
+    background-color: white;
+    color: #036dab;
+}
+
+nav ul li:first-child {
+    margin-right: 20px;
+}
+
+nav ul li:last-child {
+    margin-left: 20px;
+}
+
+/* responsivos */
+@media screen and (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    nav ul li {
+        margin: 10px 0;
+    }
+    
+    nav ul li:first-child,
+    nav ul li:last-child {
+        margin: 10px 0;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    nav ul li img {
+        width: 150px;
+    }
+    
+    .container {
+        max-width: 95%;
+        padding: 15px;
+    }
+}
+
+/* Estilos para el gráfico responsivo */
+#densityChart {
+    height: auto !important;
+    max-height: 600px;
+    margin: 0 auto;
+    transition: all 0.3s ease;
+}
+
+#loadData {
+    display: block;
+    margin: 20px auto;
+    padding: 12px 25px;
+    background-color: #33a8de;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: all 0.3s ease;
+}
+
+#loadData:hover {
+    background-color: #025384;
+    transform: scale(1.05);
+}
+
+.container {
+    width: 100%;
+    max-width: 1000px;
+    margin: 30px auto;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    justify-content: center; 
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    background-color: #f9f9f9;
+    transition: all 0.3s ease;
+}
+
+@media screen and (max-width: 900px) {
+    .container {
+        max-width: 90%;
+        padding: 20px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .container {
+        max-width: 95%;
+        padding: 15px;
+        margin: 20px auto;
+    }
+    
+    h2 {
+        font-size: 22px;
+    }
+    
+    #loadData {
+        font-size: 16px;
+        padding: 10px 20px;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .container {
+        max-width: 1200px;
+    }
+}
